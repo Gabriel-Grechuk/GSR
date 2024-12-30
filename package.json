@@ -21,6 +21,7 @@
   "scripts": {
     "start": "bun src/index.ts",
     "lint": "bun run eslint . --fix",
-    "build": "bun run build.ts && bun run tsc --emitDeclarationOnly --isolatedDeclarations"
+    "build": "bun run build.ts && bun run tsc --emitDeclarationOnly --isolatedDeclarations",
+    "pre-release": "bun run eslint . --fix && bun run build.ts && bun run tsc --emitDeclarationOnly --isolatedDeclarations"
   }
 }
