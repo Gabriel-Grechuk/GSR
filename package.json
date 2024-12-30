@@ -1,6 +1,13 @@
 {
-  "name": "]",
+  "name": "GSR",
+  "version": "0.0.0",
+  "description": "Gabe's Simple Render",
   "module": "src/index.ts",
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest",
@@ -9,10 +16,11 @@
     "typescript-eslint": "^8.18.2"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "start": "bun src/index.ts",
-    "lint": "bun run eslint . --fix"
+    "lint": "bun run eslint . --fix",
+    "build": "bun run build.ts && bun run tsc --emitDeclarationOnly --isolatedDeclarations"
   }
 }

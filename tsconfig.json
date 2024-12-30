@@ -11,7 +11,6 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
 
     // Best practices
     "strict": true,
@@ -21,14 +20,12 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
+    "noPropertyAccessFromIndexSignature": false,
 
     // Lib specifics
     "declaration": true,
     "outDir": "./dist"
   },
-  
-  "include": [
-    "src/**/*"
-  ]
+
+  "include": ["src/**/*"]
 }
