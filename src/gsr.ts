@@ -1,4 +1,5 @@
 import type { Pixel } from './pixel';
+import type { Scene2D } from './scene.2d';
 
 export class GSR {
   private canvas!: CanvasRenderingContext2D;
@@ -15,8 +16,15 @@ export class GSR {
     this.canvas = context;
   }
 
-  writePixel({ x, y, value }: { x: number; y: number; value: Pixel }): void {
-    this.canvas.fillStyle = value.getHex();
-    this.canvas.fillRect(x, y, 1, 1);
+  private renderPixel(pixel: Pixel): void {
+    this.canvas.fillStyle = pixel.getHex();
+    this.canvas.fillRect(pixel.position().x, pixel.position().y, 1, 1);
+  }
+
+  renderScene2D(scene: Scene2D): void {
+    scene.renderGometries();
+    const frame = scene.getFrame();
+
+    for (const pixel of frame) this.renderPixel(pixel);
   }
 }
